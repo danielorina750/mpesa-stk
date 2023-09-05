@@ -1,12 +1,12 @@
 const axios = require("axios");
 
 const createToken = async (req, res, next) => {
-  const secret = "oaLkwwnqstUnXb4j";
-  const consumer = "wjUHnGbz6kBW9Dw66csKRVBqPld0MG2o";
+  const secret = "29DHIKNae8Y21TYR";
+  const consumer = "p9t508mOsABPsSU11muULdrfnbmw0vjX";
   const auth = new Buffer.from(`${consumer}:${secret}`).toString("base64");
   await axios
     .get(
-      "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials",
+      "https://live.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials",
       {
         headers: {
           authorization: `Basic ${auth}`,
@@ -25,7 +25,7 @@ const createToken = async (req, res, next) => {
 };
 
 const postStk = async (req, res) => {
-  const shortCode = 174379;
+  const shortCode = 4119567;
   const phone = req.body.phone.substring(1);
   const amount = req.body.amount;
   const passkey =
