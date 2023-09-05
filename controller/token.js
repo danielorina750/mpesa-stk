@@ -29,7 +29,7 @@ const postStk = async (req, res) => {
   const phone = req.body.phone.substring(1);
   const amount = req.body.amount;
   const passkey =
-    "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919";
+    "5c973b3b8967d889259776b058248347962926aea0943773301f482cb35db058";
   const url = "https://api.safaricom.co.ke/mpesa/stkpush/v1/processrequest";
   const date = new Date();
   const timestamp =
