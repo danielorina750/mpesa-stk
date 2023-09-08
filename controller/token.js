@@ -49,10 +49,10 @@ const postStk = async (req, res) => {
     TransactionType: "CustomerPayBillOnline",
     Amount: amount,
     PartyA: `254${phone}`,
-    PartyB: 174379,
+    PartyB: shortCode,
     PhoneNumber: `254${phone}`,
     CallBackURL: "https://mydomain.com/path",
-    AccountReference: "",
+    AccountReference: "Mpesa",
     TransactionDesc: "stk push",
   };
 
