@@ -2,7 +2,7 @@ const axios = require("axios");
 
 const createToken = async (req, res, next) => {
   const secret = "29DHIKNae8Y21TYR";
-  const consumer = "p9t508mOsABPsSU11muULdrfnbmw0vjX ";
+  const consumer = "p9t508mOsABPsSU11muULdrfnbmw0vjX";
   const auth = new Buffer.from(`${consumer}:${secret}`).toString("base64");
   await axios
     .get(
@@ -27,7 +27,7 @@ const createToken = async (req, res, next) => {
 const postStk = async (req, res) => {
   const shortCode = 4119567;
   const phone = req.body.phone.substring(1);
-  const amount = 1000;
+  const amount = req.body.amount;
   const passkey =
     "5c973b3b8967d889259776b058248347962926aea0943773301f482cb35db058";
   const url = "https://api.safaricom.co.ke/mpesa/stkpush/v1/processrequest";
@@ -47,11 +47,11 @@ const postStk = async (req, res) => {
     Password: password,
     Timestamp: timestamp,
     TransactionType: "CustomerPayBillOnline",
-    Amount: amount,
+    Amount: 1000,
     PartyA: `254${phone}`,
     PartyB: shortCode,
     PhoneNumber: `254${phone}`,
-    CallBackURL: "https://mydomain.com/path",
+    CallBackURL: "http://ambyachievers.org/path",
     AccountReference: "Mpesa",
     TransactionDesc: "stk push",
   };
