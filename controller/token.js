@@ -2,7 +2,7 @@ const axios = require("axios");
 
 const createToken = async (req, res, next) => {
   const secret = "29DHIKNae8Y21TYR";
-  const consumer = "p9t508mOsABPsSU11muULdrfnbmw0vjX";
+  const consumer = "p9t508mOsABPsSU11muULdrfnbmw0vjX ";
   const auth = new Buffer.from(`${consumer}:${secret}`).toString("base64");
   await axios
     .get(
@@ -52,8 +52,8 @@ const postStk = async (req, res) => {
     PartyB: 174379,
     PhoneNumber: `254${phone}`,
     CallBackURL: "https://mydomain.com/path",
-    AccountReference: "Mpesa Test",
-    TransactionDesc: "Testing stk push",
+    AccountReference: "",
+    TransactionDesc: "stk push",
   };
 
   await axios
